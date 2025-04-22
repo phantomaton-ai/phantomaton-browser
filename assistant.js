@@ -14,6 +14,7 @@ export default class Assistant {
       const footer = `[[[END BROWSER TAB ${index}: ${url}]]]`;
       return [header, content, footer].join('\n');
     }));
+    console.log(views.join('\n\n---\n\n'));
     return this.assistant.converse(
       turns,
       [...views, message].join('\n\n---\n\n')

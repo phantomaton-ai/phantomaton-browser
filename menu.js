@@ -11,7 +11,6 @@ export default class Menu {
    * @example menu.open('https://lab.phantomaton.com')
    */
   async open(url) {
-    console.log(url);
     const browser = await this.promise;
     const page = await browser.newPage();
     await page.goto(url);
