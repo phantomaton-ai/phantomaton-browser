@@ -7,9 +7,11 @@ export default class Menu {
    * Opens a new browser tab.
    * 
    * @param {string} url - The URL to open.
+   * @body url
    * @example menu.open('https://lab.phantomaton.com')
    */
   async open(url) {
+    console.log(url);
     const browser = await this.promise;
     const page = await browser.newPage();
     await page.goto(url);
@@ -33,6 +35,7 @@ export default class Menu {
    * 
    * @param {string} tab - The zero-based index of the tab.
    * @param {string} url - The URL to open.
+   * @body url
    * @example menu.navigate('0', 'https://lab.phantomaton.com/studio')
    */
   async navigate(tab, url) {
