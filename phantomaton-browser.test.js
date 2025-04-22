@@ -33,11 +33,11 @@ describe('Phantomaton Browser', () => {
       'phantomaton-execution',
       browser({}),
       plugins.create([
-        plugins.define(conversation.assistant).as({
+        plugins.define(conversations.assistant).as({
           converse: mockConverse
         }),
         plugins.define(plugins.start).with([
-          conversation.assistant
+          conversations.assistant
         ]).as((assistant) => () => assistant)
       ])
     ] });
