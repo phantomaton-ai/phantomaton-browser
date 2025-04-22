@@ -39,7 +39,7 @@ describe('Phantomaton Browser', () => {
         plugins.define(plugins.start).with([
           conversations.assistant
         ]).as((assistant) => () => assistant)
-      ])
+      ])({})
     ] });
   });
 
