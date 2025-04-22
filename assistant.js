@@ -8,7 +8,6 @@ export default class Assistant {
     const browser = await this.promise;
     const pages = await browser.pages();
     const views = await Promise.all(pages.map(async (page, index) => {
-      const index = `${index}`;
       const content = await page.content();
       const url = page.url();
       const header = `[[[BEGIN BROWSER TAB ${index}: ${url}]]]`;

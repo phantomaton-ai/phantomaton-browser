@@ -7,7 +7,7 @@ import Plugin from './plugin.js';
 export default plugins.create(
   configuration => new Plugin(configuration),
   ({ instance }) => [
-    plugins.define(execution.commands).as(instance.commands()),
-    plugins.decorate(conversations.assistant).as(instance.assistant())
+    plugins.define(execution.command).as(instance.commands()),
+    plugins.decorate(conversations.assistant).as(assistant => instance.assistant(assistant))
   ]
 );
