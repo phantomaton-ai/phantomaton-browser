@@ -1,13 +1,13 @@
-import aleister from 'aleister';
+import conversations from 'phantomaton-conversations';
 import execution from 'phantomaton-execution';
 import plugins from 'phantomaton-plugins';
-import Menu from './projects.js';
 
-const menu = aleister(Menu);
+import Plugin from './plugin.js';
 
 export default plugins.create(
-  configuration => new Browser(configuration),
+  configuration => new Plugin(configuration),
   ({ instance }) => [
-    plugins.define(execution.commands).as(menu(instance).commands)
+    plugins.define(execution.commands).as(instance.commands()),
+    plugins.decorate(conversations.assistant).as(instance.assistant())
   ]
 );

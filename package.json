@@ -24,6 +24,7 @@
   "dependencies": {
     "aleister": "^1.0.2",
     "phantomaton-execution": "^0.0.7",
-    "phantomaton-plugins": "^0.0.2"
+    "phantomaton-plugins": "^0.0.2",
+    "puppeteer": "^24.7.0"
   }
 }
