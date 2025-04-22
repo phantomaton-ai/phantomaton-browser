@@ -81,6 +81,6 @@ export default class Menu {
   async type(tab, selector, text) {
     const browser = await this.promise;
     const pages = await browser.pages();
-    await pages[tab].type(selector, body.trim());
+    await pages[tab].type(selector, text);
   }
 }

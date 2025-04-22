@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer';
 import aleister from 'aleister';
 
 import Assistant from './assistant.js';
+import guard from './guard.js';
 import Menu from './menu.js';
 
 const menu = aleister(Menu);
@@ -13,7 +14,7 @@ export default class Plugin {
   }
 
   commands() {
-    return menu(this.promise).commands;
+    return menu(this.promise).commands.map(guard);
   }
 
   assistant(assistant) {
